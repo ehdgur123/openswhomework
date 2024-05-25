@@ -4,18 +4,7 @@
 top 
 - top 명령어는 리눅스 계열 서버의 OS 상태를 확인할 수 있는 CLI 어플리케이션이다. 서버의 CPU 사용량, 메모리 사용량 등을 확인할 수 있으며, 서버에서 구동 중인 모든 어플리케이션들을 CPU 사용률이나 메모리 사용률이 많은 순서대로 나열하여 모니터링이 가능한 명령어이다.
 
-root@5ad51ce3d5c1:/# top
-top - 07:24:48 up 1 min,  0 users,  load average: 0.06, 0.04, 0.01
-Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  0.1 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-MiB Mem :   2898.0 total,   1172.5 free,    765.1 used,    960.4 buff/cache
-MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   1973.4 avail Mem
-
-  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-    1 root      20   0    4248   3392   2860 S   0.0   0.1   0:00.01 bash
-   13 root      20   0    6092   3236   2736 R   0.0   0.1   0:00.00 top
-
-  리눅스 서버에 top 명령어를 입력하면 서버의 CPU 사용률이나 메모리 사용률들을 대표적으로 볼 수 있으며, CPU 사용이 많은 순서대로 프로세스 목록을 보여주고 있다. 
+- 리눅스 서버에 top 명령어를 입력하면 서버의 CPU 사용률이나 메모리 사용률들을 대표적으로 볼 수 있으며, CPU 사용이 많은 순서대로 프로세스 목록을 보여주고 있다. 
 
 
 ps 
@@ -28,20 +17,6 @@ ps 명령어와 함께 사용되는 옵션
 
 장점: 모든 프로세스 목록을 확인할 수 있고, 자세한 정보를 제공한다. 
 단점: 작업 목록을 확인하기 위해서는 옵션을 추가로 지정해야 하며, 백그라운드에서 실행 중인 프로세스를 확인하기 어렵다. 
-
-
-root@5ad51ce3d5c1:/# ps -e
-  PID TTY          TIME CMD
-    1 pts/0    00:00:00 bash
-   15 pts/0    00:00:00 ps
-root@5ad51ce3d5c1:/# ps -f
-UID        PID  PPID  C STIME TTY          TIME CMD
-root         1     0  0 07:23 pts/0    00:00:00 /bin/bash
-root        16     1  0 07:30 pts/0    00:00:00 ps -f
-root@5ad51ce3d5c1:/# ps -l
-F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
-4 S     0     1     0  0  80   0 -  1062 do_wai pts/0    00:00:00 bash
-0 R     0    17     1  0  80   0 -  1455 -      pts/0    00:00:00 ps
 
 jobs
 - jobs 명령어는 작업의 상태를 표시하는 명령어이다. 현재 쉘 세션에서 실행시킨 백그라운드 작업의 목록이 출력되며, 각 작업에는 번호가 붙어 있어 kill 명령어 뒤에 '%번호' 등으로 사용할 수 있다.
